@@ -2,17 +2,18 @@
 
 > **Status: early development (M0 complete).** The project builds and loads, but only the three spirit items exist right now. Gameplay features are not implemented yet.
 
-Races is a [NeoForge](https://neoforged.net/) mod for **Minecraft 1.21.1**. Three bosses have seized the castles of the Nether. Defeat them, claim their **Spirit Stones**, and perform a demanding ritual in the Nether to bind one of their powers to yourself.
+Races is a [NeoForge](https://neoforged.net/) mod for **Minecraft 1.21.1**. Three fallen guardians have seized the castles of the Nether. Defeat them, claim their **Spirit Stones**, and perform a demanding ritual in the Nether to inherit one of their powers.
 
 ## What is Races?
 
 You do not simply craft a race. You earn it.
 
 1. Find and conquer one of the three Nether fortresses.
-2. Defeat its boss and take the **Spirit Stone** and the boss's themed sword.
-3. Build the ritual site yourself, in the Nether.
-4. Complete the ritual: offerings, time and weather conditions, experience, guardian waves, and an uninterrupted channel.
-5. Bind the boss's power and become one of three races.
+2. Defeat its boss and take the **Spirit Stone**; sword pieces drop from the boss and its chests.
+3. Forge a **Cursed Stone** at the **Spirit Forge Table** from 3 sword pieces and your race's material.
+4. Build the ritual site yourself, in the Nether.
+5. Complete the ritual: Spirit Stone, Cursed Stone, offerings, experience, guardian waves, and an uninterrupted channel. There is no time or weather requirement; the Cursed Stone starts a 5-minute **Corruption Phase** instead.
+6. Bind the guardian's power and become one of three races.
 
 Every boss is repeatable: new fortresses generate, so new Spirit Stones can be obtained.
 
@@ -26,9 +27,11 @@ Every boss is repeatable: new fortresses generate, so new Spirit Stones can be o
 
 ## Planned content
 
-- Three Nether fortress variants (Nether-fortress style, partially corrupted by each boss's spirit): **Signal Sovereign**, **Grand Architect**, **Blood Warden**.
+- Three Nether fortress variants (Nether-fortress style, partially corrupted by each guardian's spirit): **Signal Sovereign**, **Grand Architect**, **Blood Warden**.
 - Three animated bosses (GeckoLib), two phases each.
-- Three themed boss swords; combine all three with a Nether Star to forge the **Spirit Breaker**, which resets your race.
+- **Sword pieces** from boss and fortress loot; forge them into themed boss swords at the **Spirit Forge Table**.
+- **Cursed Stone** — 3 sword pieces plus a race material (Redstone Block / Quartz Block / Netherite Sword); starts the 5-minute Corruption Phase and applies race-specific effects to hostile mobs.
+- Combine the three forged boss swords with a Nether Star to forge the **Spirit Breaker**, which resets your race.
 - Player-built ritual multiblock (altar, three pedestals, four pillars), Nether-only.
 - Spirit Pocket UI, HUD, advancements, English and Turkish localization.
 - The three spirit items will later become **3D GeckoLib animated items**; modeling is planned for a later milestone.
@@ -107,8 +110,8 @@ src/main/resources/
 
 - [x] **M0** — NeoForge 1.21.1 skeleton, clean repository, working build
 - [ ] **M1** — race data (attachment), `/race` commands, config, keep-on-death
-- [ ] **M2** — Spirit Stone, altar, ritual multiblock, ritual tablet
-- [ ] **M3** — Nether fortress variants, bosses, loot, themed swords
+- [ ] **M2** — Spirit Stone, altar, ritual multiblock, ritual tablet, Spirit Forge Table, Cursed Stone
+- [ ] **M3** — Nether fortress variants, bosses, sword pieces, loot, forged boss swords
 - [ ] **M4** — Spirit Pocket, Builder bonus, Adrenaline + hunger cost, Spirit Ward
 - [ ] **M5** — animations, Spirit Breaker, advancements, HUD/GUI
 - [ ] **M6** — localization polish, balance, release
@@ -125,7 +128,7 @@ MIT. See [`LICENSE`](LICENSE).
 
 ## Türkçe özet
 
-**Races**, Minecraft 1.21.1 (NeoForge) için geliştirilen bir moddur. Nether kalelerini ele geçirmiş üç bossu yenersin, düşen **Ruh Taşı** ile Nether'da kendi kurduğun ritüel alanında bir ırkla bağ kurarsın.
+**Races**, Minecraft 1.21.1 (NeoForge) için geliştirilen bir moddur. Nether kalelerini ele geçirmiş üç düşmüş muhafızı yenersin, düşen **Ruh Taşı** ve kılıç parçalarıyla Nether'da kendi kurduğun ritüel alanında bir ırkla bağ kurarsın. Ritüel için **Ruh Dövme Masası**'nda dövülen **Lanetli Taş** ve 5 dakikalık Yozlaşma Evresi gerekir.
 
 Şu an **M0 tamamlanmış** durumda: proje derleniyor, oyuna yükleniyor ve üç ruh eşyası görünüyor. Irk, ritüel, boss ve kale sistemleri henüz eklenmedi.
 
