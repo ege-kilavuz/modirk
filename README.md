@@ -65,7 +65,7 @@ The server config is written to `config/modirk-server.toml` (per world).
 | NeoForge 1.21.1 project, Gradle build | ✅ Working |
 | Three spirit items + creative tab | ✅ Working |
 | Tooltips, English and Turkish localization | ✅ Working |
-| Spirit item textures (16×16 pixel art) | ✅ Final |
+| Spirit item textures (64×64 pixel art) | ✅ Final |
 | Mod logo | ✅ Added |
 | Race data (attachment), `/race` commands, config, keep-on-death | ✅ Working |
 | Races mechanics, rituals, bosses, fortresses | ❌ Not implemented |
