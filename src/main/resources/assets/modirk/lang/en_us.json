@@ -19,5 +19,6 @@
   "command.modirk.race.already": "%s is already %s.",
   "command.modirk.race.unknown": "Unknown race: %s (valid: %s)",
   "command.modirk.race.list": "Races: %s",
-  "command.modirk.race.announce": "%s has become %s."
+  "command.modirk.race.announce": "%s has become %s.",
+  "block.modirk.ruh_kaidesi": "Spirit Pedestal"
 }

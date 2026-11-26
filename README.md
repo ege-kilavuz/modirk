@@ -1,6 +1,6 @@
 # Races (modirk)
 
-> **Status: early development (M1 in progress).** The project builds and loads. Three spirit items and the race data layer (attachment, `/race` commands, config, keep-on-death) exist; gameplay mechanics are not implemented yet.
+> **Status: early development (M1 complete, M2 in progress).** The race data layer and the first ritual block — the Spirit Pedestal — exist; rituals, bosses and fortresses are still being built.
 
 Races is a [NeoForge](https://neoforged.net/) mod for **Minecraft 1.21.1**. Three fallen guardians have seized the castles of the Nether. Defeat them, claim their **Spirit Stones**, and perform a demanding ritual in the Nether to inherit one of their powers.
 
@@ -54,7 +54,8 @@ The server config is written to `config/modirk-server.toml` (per world).
 - **Sword pieces** from boss and fortress loot; forge them into themed boss swords at the **Spirit Forge Table**.
 - **Cursed Stone** — 3 sword pieces plus a race material (Redstone Block / Quartz Block / Netherite Sword); starts the 5-minute Corruption Phase and applies race-specific effects to hostile mobs.
 - Combine the three forged boss swords with a Nether Star to forge the **Spirit Breaker**, which resets your race.
-- Player-built ritual multiblock (altar, three pedestals, four pillars), Nether-only.
+- Player-built ritual multiblock (altar, three **Spirit Pedestals**, four pillars), Nether-only.
+- **Spirit Pedestal** — displays a single item floating and slowly rotating above it; used for offerings and for showing off spirit relics.
 - Spirit Pocket UI, HUD, advancements, English and Turkish localization.
 - The three spirit items will later become **3D GeckoLib animated items**; modeling is planned for a later milestone.
 
@@ -68,6 +69,7 @@ The server config is written to `config/modirk-server.toml` (per world).
 | Spirit item textures (64×64 pixel art) | ✅ Final |
 | Mod logo | ✅ Added |
 | Race data (attachment), `/race` commands, config, keep-on-death | ✅ Working |
+| Spirit Pedestal (block, block entity, floating display) | ✅ Working |
 | Races mechanics, rituals, bosses, fortresses | ❌ Not implemented |
 | 3D animated item models | ❌ Planned (GeckoLib) |
 
@@ -117,20 +119,26 @@ Run the client in a development environment:
 ```
 src/main/java/com/modirk/
 ├── Modirk.java              mod entry point
+├── block/                   Spirit Pedestal block + block entity
+├── client/                  block entity renderer
 ├── command/RaceCommand.java /race command tree
 ├── config/ModConfigs.java   server config (keep-on-death, permissions)
 ├── race/                    Race enum, RaceData helpers, RaceEvents
 ├── item/RaceSpiritItem.java spirit item with tooltip
-└── registry/                items, creative tab, attachments
+└── registry/                items, blocks, block entities, creative tab, attachments
 
 src/main/resources/
 ├── META-INF/neoforge.mods.toml
 ├── pack.mcmeta
 ├── logo.png
 └── assets/modirk/
+    ├── blockstates/
     ├── lang/                en_us, tr_tr
+    ├── models/block/        block models
     ├── models/item/
-    └── textures/item/
+    └── textures/
+        ├── block/
+        └── item/
 ```
 
 ## Roadmap

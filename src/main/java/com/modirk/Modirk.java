@@ -4,6 +4,8 @@ import com.modirk.command.RaceCommand;
 import com.modirk.config.ModConfigs;
 import com.modirk.race.RaceEvents;
 import com.modirk.registry.ModAttachments;
+import com.modirk.registry.ModBlockEntities;
+import com.modirk.registry.ModBlocks;
 import com.modirk.registry.ModCreativeTabs;
 import com.modirk.registry.ModItems;
 import com.mojang.logging.LogUtils;
@@ -27,6 +29,8 @@ public final class Modirk {
     public Modirk(IEventBus modEventBus, ModContainer modContainer) {
         // Kayıtlar (mod veri yolu)
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         ModAttachments.register(modEventBus);
 

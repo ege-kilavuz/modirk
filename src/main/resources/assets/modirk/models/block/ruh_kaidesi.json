@@ -1,0 +1,47 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "modirk:block/ruh_kaidesi_side",
+    "side": "modirk:block/ruh_kaidesi_side",
+    "top": "modirk:block/ruh_kaidesi_top",
+    "bottom": "modirk:block/ruh_kaidesi_bottom"
+  },
+  "elements": [
+    {
+      "from": [1, 0, 1],
+      "to": [15, 2, 15],
+      "faces": {
+        "down": { "texture": "#bottom", "uv": [0, 0, 16, 16] },
+        "up": { "texture": "#side", "uv": [0, 0, 16, 16] },
+        "north": { "texture": "#side", "uv": [0, 14, 16, 16] },
+        "south": { "texture": "#side", "uv": [0, 14, 16, 16] },
+        "west": { "texture": "#side", "uv": [0, 14, 16, 16] },
+        "east": { "texture": "#side", "uv": [0, 14, 16, 16] }
+      }
+    },
+    {
+      "from": [4, 2, 4],
+      "to": [12, 12, 12],
+      "faces": {
+        "down": { "texture": "#side", "uv": [0, 0, 8, 8] },
+        "up": { "texture": "#side", "uv": [8, 8, 16, 16] },
+        "north": { "texture": "#side", "uv": [0, 2, 8, 12] },
+        "south": { "texture": "#side", "uv": [8, 2, 16, 12] },
+        "west": { "texture": "#side", "uv": [8, 2, 16, 12] },
+        "east": { "texture": "#side", "uv": [0, 2, 8, 12] }
+      }
+    },
+    {
+      "from": [2, 12, 2],
+      "to": [14, 14, 14],
+      "faces": {
+        "down": { "texture": "#side", "uv": [0, 0, 16, 16] },
+        "up": { "texture": "#top", "uv": [0, 0, 16, 16] },
+        "north": { "texture": "#side", "uv": [0, 0, 16, 2] },
+        "south": { "texture": "#side", "uv": [0, 0, 16, 2] },
+        "west": { "texture": "#side", "uv": [0, 0, 16, 2] },
+        "east": { "texture": "#side", "uv": [0, 0, 16, 2] }
+      }
+    }
+  ]
+}

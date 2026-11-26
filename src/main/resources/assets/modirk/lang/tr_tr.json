@@ -19,5 +19,6 @@
   "command.modirk.race.already": "%s zaten %s.",
   "command.modirk.race.unknown": "Bilinmeyen ırk: %s (geçerli: %s)",
   "command.modirk.race.list": "Irklar: %s",
-  "command.modirk.race.announce": "%s artık %s."
+  "command.modirk.race.announce": "%s artık %s.",
+  "block.modirk.ruh_kaidesi": "Ruh Kaidesi"
 }

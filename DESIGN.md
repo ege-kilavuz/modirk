@@ -1,6 +1,6 @@
 # Races (modirk) — Tasarım Dokümanı
 
-> Durum: **Tasarım kilitli v1.5 (hikaye + ritüel + texture rehberi + 64×64 M0 texture'ları)** · Son güncelleme: 2026-11-26
+> Durum: **Tasarım kilitli v1.6 (Ruh Kaidesi sergileme bloğu eklendi)** · Son güncelleme: 2026-11-26
 > Platform: NeoForge 1.21.1 · Java 21
 > Mod adı: **Races** · Mod id: **modirk** · Paket: `com.modirk`
 > Öncelik: tek oyunculu deneyim, public mod uyumlu
@@ -206,7 +206,8 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 ### 5.1 Ritüel Alanı (oyuncu inşası)
 
 - Worldgen tapınak yok; oyuncu kendi ritüel alanını **elle inşa eder**.
-- Multiblock: 5×5 platform, merkezde **Sunak**, 3 adak kaidesi, 4 sütun.
+- Multiblock: 5×5 platform, merkezde **Sunak**, 3 **Ruh Kaidesi**, 4 sütun.
+- **Ruh Kaidesi** aynı zamanda sergileme bloğudur: üstüne konan tek eşyayı havada döndürerek gösterir (adaklar ve ruh eşyaları için).
 - **Ritüel Tableti** inşa pattern'ini ve koşulları gösterir.
 - Alan **Nether'da** kurulur; Overworld'de çalışmaz.
 - **Sunak yerinde kalır**, ritüel sonrası "tükenmiş" görünüme geçer ve **yeni bir Ruh Taşı** ile tekrar kullanılabilir. Tekrar inşa gerekmez; gerçek sınır Ruh Taşı'dır.
@@ -215,7 +216,7 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 1. Sunağa **Ruh Taşı** (boss drop'u) konur.
 2. **Lanetli Taş** sunağa yerleştirilir; Ruh Taşı, taşın malzemesinin ruhuyla yozlaşır ve **5 dakikalık Yozlaşma Evresi** başlar. Bu süre içinde ritüel tamamlanmalıdır. **Zaman/hava koşulu yoktur.**
-3. Irka özel **3 adak** kaidelere yerleştirilir.
+3. Irka özel **3 adak** Ruh Kaidelerine yerleştirilir; kaide üstünde havada sergilenir.
 4. Oyuncu en az **30 XP seviyesi**ne sahiptir (başarıda tükenir).
 5. Muhafızın "kalıntıları" dalgalar halinde doğar; temizlenmeden ritüel ilerlemez.
 6. Oyuncu sunağın 3 blok yakınında **15 saniye** kesintisiz durur. Hasar alır veya uzaklaşırsa ritüel sıfırlanır.
@@ -460,12 +461,14 @@ Bu tonlar ruh eşyalarında kullanıldı; sonraki tüm item/blok texture'ları a
   - **Tükenmiş:** çatlak gövde, sönmüş çanak, kül izi.
 - **Model:** `cube_bottom_top` + `facing`; aktif/tükenmiş için blockstate varyantı.
 
-#### Adak Kaidesi
+#### Ruh Kaidesi
 
-- **Texture'lar:** `adak_kaidesi_top`, `adak_kaidesi_side` (16×16).
-- **Silüet:** küçük, alçak sütun; üstte adak yuvası.
-- **Renk:** nether tuğlası gövde, blackstone üst, kemik rune.
-- **Detay:** yuvada hafif çukur gölge; adak konunca üstte küçük ırk rengi halka.
+- **Texture'lar:** `ruh_kaidesi_top`, `ruh_kaidesi_side`, `ruh_kaidesi_bottom` (16×16).
+- **Silüet:** alçak, 3 katlı sütun (geniş taban → ince gövde → üst tabla); üstte eşya yuvası.
+- **Renk:** blackstone gövde (`#2A2A32`), kemik rune halka (`#D8D0C0`), bakır rune çentikleri.
+- **Detay:** üst tablada çukur yuva; **üstüne konan tek eşya 1 blok yukarıda, yavaşça dönererek sergilenir**. Boşken yuva karanlık; doluyken eşyanın altında hafif ırk rengi halka.
+- **Etkileşim:** eşya ile sağ tık → yerleştir; eli boş sağ tık → geri al; blok kırılınca eşya düşer.
+- **Model:** 3 elementli özel model (taban 14×2, gövde 8×10, tabla 12×2); block entity ile eşya taşır.
 
 #### Sütun
 
@@ -580,7 +583,7 @@ src/main/resources/assets/modirk/
 | Lanetli Taş (PvP) | `item/lanetli_tas_pvp.png` | 64×64 | M2 | ⬜ Planlı | Siyah taş, mavi çatlak + kırmızı damar |
 | Ritüel Tableti | `item/rituel_tableti.png` | 64×64 | M2 | ⬜ Planlı | Kırık taş tablet, mavi rune |
 | Sunak | `block/sunak_*.png` | 16×16 | M2 | ⬜ Planlı | Nether tuğlası + ruh çanağı |
-| Adak Kaidesi | `block/adak_kaidesi_*.png` | 16×16 | M2 | ⬜ Planlı | Küçük sütun, adak yuvası |
+| Ruh Kaidesi | `block/ruh_kaidesi_*.png` | 16×16 | M2 | ⬜ Planlı | 3 katlı sütun, eşya yuvası + sergileme |
 | Sütun | `block/sutun_*.png` | 16×16 | M2 | ⬜ Planlı | Rune kabartmalı sütun |
 | Ruh Dövme Masası | `block/ruh_dovme_masasi_*.png` | 16×16 | M2 | ⬜ Planlı | Örs + ocak, 3 parça yuvası |
 | Kızıl Kılıç | `item/kizil_kilic.png` | 64×64 | M3 | ⬜ Planlı | Eğri pala, kan oluğu |
