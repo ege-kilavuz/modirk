@@ -37,3 +37,6 @@ Thumbs.db
 
 # Kisisel inceleme ciktilari
 modir-minecraft-modu-incelemesi.json
+
+# Graphify ciktilari
+graphify-out/

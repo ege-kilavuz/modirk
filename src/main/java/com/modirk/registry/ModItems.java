@@ -2,8 +2,11 @@ package com.modirk.registry;
 
 import com.modirk.Modirk;
 import com.modirk.item.RaceSpiritItem;
+import com.modirk.item.SpiritStoneItem;
+import com.modirk.race.Race;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -31,6 +34,19 @@ public final class ModItems {
     /** Ruh Kaidesi bloğunun eşyası. */
     public static final DeferredItem<BlockItem> RUH_KAIDESI =
             ITEMS.registerSimpleBlockItem(ModBlocks.RUH_KAIDESI);
+
+    public static final DeferredItem<Item> RUH_TASI_REDSTONE = ITEMS.register("ruh_tasi_redstone",
+            () -> new SpiritStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), Race.REDSTONE));
+
+    public static final DeferredItem<Item> RUH_TASI_BUILDER = ITEMS.register("ruh_tasi_builder",
+            () -> new SpiritStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), Race.BUILDER));
+
+    public static final DeferredItem<Item> RUH_TASI_PVP = ITEMS.register("ruh_tasi_pvp",
+            () -> new SpiritStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), Race.PVP));
+
+    /** Sunak bloğunun eşyası. */
+    public static final DeferredItem<BlockItem> SUNAK =
+            ITEMS.registerSimpleBlockItem(ModBlocks.SUNAK);
 
     private ModItems() {
     }

@@ -23,7 +23,11 @@ public final class ModCreativeTabs {
                         output.accept(ModItems.REDSTONE_RUH.get());
                         output.accept(ModItems.BUILDER_RUH.get());
                         output.accept(ModItems.PVP_RUH.get());
+                        output.accept(ModItems.RUH_TASI_REDSTONE.get());
+                        output.accept(ModItems.RUH_TASI_BUILDER.get());
+                        output.accept(ModItems.RUH_TASI_PVP.get());
                         output.accept(ModItems.RUH_KAIDESI.get());
+                        output.accept(ModItems.SUNAK.get());
                     })
                     .build());
 

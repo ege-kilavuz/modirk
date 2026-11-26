@@ -1,0 +1,6 @@
+{
+  "parent": "modirk:block/sunak_base",
+  "textures": {
+    "top": "modirk:block/sunak_top_exhausted"
+  }
+}

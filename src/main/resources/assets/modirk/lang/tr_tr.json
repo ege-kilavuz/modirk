@@ -20,5 +20,13 @@
   "command.modirk.race.unknown": "Bilinmeyen ırk: %s (geçerli: %s)",
   "command.modirk.race.list": "Irklar: %s",
   "command.modirk.race.announce": "%s artık %s.",
-  "block.modirk.ruh_kaidesi": "Ruh Kaidesi"
+  "block.modirk.ruh_kaidesi": "Ruh Kaidesi",
+  "block.modirk.sunak": "Sunak",
+  "item.modirk.ruh_tasi_redstone": "Redstone Ruh Taşı",
+  "item.modirk.ruh_tasi_builder": "Builder Ruh Taşı",
+  "item.modirk.ruh_tasi_pvp": "PvP Ruh Taşı",
+  "tooltip.modirk.ruh_tasi.redstone": "Sinyal Efendisi'nin taşan ruhu.",
+  "tooltip.modirk.ruh_tasi.builder": "Mimar-ı Azam'ın taşan ruhu.",
+  "tooltip.modirk.ruh_tasi.pvp": "Kanlı Muhafız'ın taşan ruhu.",
+  "tooltip.modirk.ruh_tasi.hint": "Ritüeli başlatmak için sunağa koy."
 }

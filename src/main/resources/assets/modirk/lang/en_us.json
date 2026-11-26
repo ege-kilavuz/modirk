@@ -20,5 +20,13 @@
   "command.modirk.race.unknown": "Unknown race: %s (valid: %s)",
   "command.modirk.race.list": "Races: %s",
   "command.modirk.race.announce": "%s has become %s.",
-  "block.modirk.ruh_kaidesi": "Spirit Pedestal"
+  "block.modirk.ruh_kaidesi": "Spirit Pedestal",
+  "block.modirk.sunak": "Altar",
+  "item.modirk.ruh_tasi_redstone": "Redstone Spirit Stone",
+  "item.modirk.ruh_tasi_builder": "Builder Spirit Stone",
+  "item.modirk.ruh_tasi_pvp": "PvP Spirit Stone",
+  "tooltip.modirk.ruh_tasi.redstone": "The overflowing soul of the Signal Sovereign.",
+  "tooltip.modirk.ruh_tasi.builder": "The overflowing soul of the Grand Architect.",
+  "tooltip.modirk.ruh_tasi.pvp": "The overflowing soul of the Blood Warden.",
+  "tooltip.modirk.ruh_tasi.hint": "Place it on an altar to begin the ritual."
 }

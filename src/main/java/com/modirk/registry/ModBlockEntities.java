@@ -2,6 +2,7 @@ package com.modirk.registry;
 
 import com.modirk.Modirk;
 import com.modirk.block.entity.RuhKaidesiBlockEntity;
+import com.modirk.block.entity.SunakBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -18,6 +19,11 @@ public final class ModBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RuhKaidesiBlockEntity>> RUH_KAIDESI =
             BLOCK_ENTITIES.register("ruh_kaidesi", () -> BlockEntityType.Builder
                     .of(RuhKaidesiBlockEntity::new, ModBlocks.RUH_KAIDESI.get())
+                    .build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SunakBlockEntity>> SUNAK =
+            BLOCK_ENTITIES.register("sunak", () -> BlockEntityType.Builder
+                    .of(SunakBlockEntity::new, ModBlocks.SUNAK.get())
                     .build(null));
 
     private ModBlockEntities() {

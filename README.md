@@ -70,6 +70,8 @@ The server config is written to `config/modirk-server.toml` (per world).
 | Mod logo | ✅ Added |
 | Race data (attachment), `/race` commands, config, keep-on-death | ✅ Working |
 | Spirit Pedestal (block, block entity, floating display) | ✅ Working |
+| Spirit Stones (3 variants) + Altar (3 states) | ✅ Working |
+| Ritual multiblock, tablet, forge table, cursed stone | ⬜ In progress (M2) |
 | Races mechanics, rituals, bosses, fortresses | ❌ Not implemented |
 | 3D animated item models | ❌ Planned (GeckoLib) |
 

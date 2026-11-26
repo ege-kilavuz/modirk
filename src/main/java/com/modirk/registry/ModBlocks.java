@@ -2,6 +2,7 @@ package com.modirk.registry;
 
 import com.modirk.Modirk;
 import com.modirk.block.RuhKaidesiBlock;
+import com.modirk.block.SunakBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -29,6 +30,18 @@ public final class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(3.5F, 6.0F)
                     .sound(SoundType.STONE)
+                    .noOcclusion());
+
+    public static final DeferredBlock<SunakBlock> SUNAK = BLOCKS.registerBlock(
+            "sunak",
+            SunakBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(4.0F, 8.0F)
+                    .sound(SoundType.STONE)
+                    .lightLevel(state -> state.getValue(SunakBlock.STATE) == com.modirk.block.RitualState.READY ? 7 : 0)
                     .noOcclusion());
 
     private ModBlocks() {

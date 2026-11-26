@@ -32,7 +32,9 @@ try {
             'C:\Program Files\Java',
             'C:\Program Files\Eclipse Adoptium',
             'C:\Program Files\Amazon Corretto',
-            'C:\Program Files\Microsoft'
+            'C:\Program Files\Microsoft',
+            (Join-Path $env:USERPROFILE 'jdk21'),
+            (Join-Path $env:USERPROFILE '.jdks')
         )
         $candidates = foreach ($r in $roots) {
             if (Test-Path $r) {

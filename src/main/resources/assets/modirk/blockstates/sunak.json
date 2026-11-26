@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "state=idle": { "model": "modirk:block/sunak" },
+    "state=ready": { "model": "modirk:block/sunak_ready" },
+    "state=exhausted": { "model": "modirk:block/sunak_exhausted" }
+  }
+}

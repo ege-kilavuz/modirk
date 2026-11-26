@@ -1,6 +1,6 @@
 # Races (modirk) — Tasarım Dokümanı
 
-> Durum: **Tasarım v1.8 (gizli varis + Ruh Kâhini hedefi + üç ilke)** · Son güncelleme: 2026-11-26
+> Durum: **Tasarım v1.9 (Sunak + Ruh Taşı uygulandı)** · Son güncelleme: 2026-11-27
 > Platform: NeoForge 1.21.1 · Java 21
 > Mod adı: **Races** · Mod id: **modirk** · Paket: `com.modirk`
 > Öncelik: tek oyunculu deneyim, public mod uyumlu
