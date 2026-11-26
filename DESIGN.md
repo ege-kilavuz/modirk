@@ -407,6 +407,7 @@ com.modirk
 - **Ağ:** cep UI senkronizasyonu, HUD sayaçları, ritüel durumu; istemci asla otorite değil.
 - **Olaylar:** blok kırma/yerleştirme, hasar, ölüm, boyut değişimi, oyuncu giriş/çıkış.
 - **Kayıt uyumu:** tüm kalıcı veriler sürümlenebilir olmalı (ileride alan eklenince eski dünyalar bozulmasın).
+- **Block entity senkronizasyonu:** NeoForge'un varsayılan `onDataPacket`'i **boş NBT etiketini yok sayar**; bir eşyayı "temizle" paketi boş etiketle giderse istemci eski görüntüyü korur. Böyle durumlarda `onDataPacket` override edilip etiket koşulsuz uygulanmalı (Ruh Kaidesi'nde yapıldı).
 
 ## 8. Yol Haritası
 

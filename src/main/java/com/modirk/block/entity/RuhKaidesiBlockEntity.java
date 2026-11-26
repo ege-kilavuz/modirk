@@ -69,6 +69,21 @@ public class RuhKaidesiBlockEntity extends BlockEntity {
         return this.saveWithoutMetadata(registries);
     }
 
+    /**
+     * NeoForge'un varsayılan {@code onDataPacket} uygulaması <b>boş</b> NBT etiketlerini
+     * yok sayar. Kaide boşaltıldığında etiket boş olduğu için istemci eski eşyayı
+     * göstermeye devam ederdi; burada etiket boş olsa bile her zaman uyguluyoruz.
+     */
+    @Override
+    public void onDataPacket(net.minecraft.network.Connection connection,
+                             ClientboundBlockEntityDataPacket packet,
+                             @NotNull HolderLookup.Provider registries) {
+        CompoundTag tag = packet.getTag();
+        if (tag != null) {
+            this.loadWithComponents(tag, registries);
+        }
+    }
+
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
