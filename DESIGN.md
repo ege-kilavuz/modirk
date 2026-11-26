@@ -377,7 +377,7 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 ### 10.4 Mevcut ruh eşyaları (M0 — yenilenecek)
 
-Şu anki üç texture **geçici ve bulanık**; hedef aşağıdaki gibidir. Üçü de aynı boyutta, aynı dış hat kalınlığında ve aynı "yüzen parça" kompozisyonunda olacak.
+Şu anki üç texture **16×16 piksel sanat** olarak yenilendi; aşağıdaki tarif korunuyor. Üçü de aynı boyutta, aynı dış hat kalınlığında ve aynı "yüzen parça" kompozisyonunda.
 
 | Eşya | Silüet | Gövde | Çekirdek | Detay |
 |---|---|---|---|---|
@@ -387,7 +387,7 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 - **Kompozisyon:** eşya 16×16'nın ortasına oturur; kenarlarda 1–2 px boşluk kalır.
 - **Parlama:** çekirdekte 2 px açık ton + 1 px beyaz nokta; fazlası "çiğ" durur.
-- **Yeniden çizim:** mevcut PNG'ler silinip bu tarifle 16×16 olarak yeniden üretilecek.
+- **Durum:** üçü de 16×16 olarak yeniden çizildi (M0).
 
 ### 10.5 Ritüel ve zanaat eşyaları (M2)
 
@@ -548,9 +548,9 @@ src/main/resources/assets/modirk/
 
 | Texture | Yol | Boyut | Milestone | Durum | Kısa tarif |
 |---|---|---|---|---|---|
-| Redstone Ruhu | `item/redstone_ruhu.png` | 16×16 | M0 | ♻️ Yenilenecek | Siyah devre parçası, kırmızı kare çekirdek |
-| Builder Ruhu | `item/builder_ruhu.png` | 16×16 | M0 | ♻️ Yenilenecek | Kırık kuvars küp, amber prizma |
-| PvP Ruhu | `item/pvp_ruhu.png` | 16×16 | M0 | ♻️ Yenilenecek | Kan damlası hançer, mavi çekirdek |
+| Redstone Ruhu | `item/redstone_ruhu.png` | 16×16 | M0 | ✅ Yenilendi | Siyah devre parçası, kırmızı kare çekirdek |
+| Builder Ruhu | `item/builder_ruhu.png` | 16×16 | M0 | ✅ Yenilendi | Kırık kuvars küp, amber prizma |
+| PvP Ruhu | `item/pvp_ruhu.png` | 16×16 | M0 | ✅ Yenilendi | Kan damlası hançer, mavi çekirdek |
 | Logo | `logo.png` | 128×128 | M0 | ✅ Final | Kullanıcı görseli |
 | Ruh Taşı (Redstone) | `item/ruh_tasi_redstone.png` | 16×16 | M2 | ⬜ Planlı | Kristal, kırmızı devre çatlağı |
 | Ruh Taşı (Builder) | `item/ruh_tasi_builder.png` | 16×16 | M2 | ⬜ Planlı | Kristal, amber geometrik çatlak |
