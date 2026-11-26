@@ -1,6 +1,6 @@
 # Races (modirk) — Tasarım Dokümanı
 
-> Durum: **Tasarım kilitli v1.3 (hikaye + ritüel + texture rehberi)** · Son güncelleme: 2026-11-26
+> Durum: **Tasarım kilitli v1.4 (hikaye + ritüel + texture rehberi + M0 texture'ları)** · Son güncelleme: 2026-11-26
 > Platform: NeoForge 1.21.1 · Java 21
 > Mod adı: **Races** · Mod id: **modirk** · Paket: `com.modirk`
 > Öncelik: tek oyunculu deneyim, public mod uyumlu
@@ -323,7 +323,7 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 - **Çözünürlük:** itemler ve bloklar **16×16**; GUI **256×256**; bosslar **128×128** (gerekirse 256×256 atlas).
 - **Stil:** vanilla'ya yakın, net piksel sanat. **Anti-aliasing yok, blur yok, gradient yok.**
-- **Dış hat:** her sprite'ta **1 px koyu hat** (`#14101A`).
+- **Dış hat:** her sprite'ta **1 px koyu hat** (`#0E0A14`).
 - **Işık:** sol üstten; gölge sağ altta. Tüm set aynı ışığı kullanır.
 - **Renk sayısı:** item başına **8–14 renk**; aynı rampanın 2–4 tonu.
 - **Arka plan:** şeffaf. Gölge sadece dış hat; yumuşak gölge yok.
@@ -336,7 +336,7 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 | Rol | Renk | Hex |
 |---|---|---|
-| Boşluk / dış hat | Void black | `#14101A` |
+| Boşluk / dış hat | Void black | `#0E0A14` |
 | Derin gölge | Deep purple-black | `#241A2B` |
 | Nether tuğlası | Koyu kızıl kahve | `#3A1F1F` |
 | Nether tuğlası (açık) | Sıcak kahve | `#5A2E2A` |
@@ -361,6 +361,21 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 | Amber parlaması | Amber glow | `#FFC46B` |
 | Yozlaşma | Corrupted purple | `#5B2A6E` |
 
+#### 10.2.1 Kalıntı paleti (M0'da kullanılan kesin tonlar)
+
+Bu tonlar ruh eşyalarında kullanıldı; sonraki tüm item/blok texture'ları aynı rampaları kullanacak.
+
+| Aile | Koyu | Orta | Açık |
+|---|---|---|---|
+| Indigo (gövde/çerçeve) | `#1B1B2A` | `#2E2E44` | `#454563` |
+| Kemik (metal/taş yüzey) | `#B8AE97` | `#E8DFC8` | `#FFF6E0` |
+| Bakır | `#6B4A2A` | `#B87333` | `#E0A060` |
+| Patina | `#2F5D52` | `#4E8C7A` | `#7FC4A8` |
+| Kor (ember) | `#A33A1E` | `#FF7A3C` | `#FFC46B` |
+| Kan | `#5E0F1E` | `#B3122E` | `#E84A5F` |
+| Ruh camgöbeği | `#1E6B78` | `#57E0E8` | `#B8F7FA` |
+| Çelik | `#2A2A32` | `#5A5A6A` | `#8A8A9A` |
+
 ### 10.3 Irk görsel dili
 
 | Irk | Ana renk | İkincil | Parlama | Motif | Şekil dili |
@@ -377,16 +392,17 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 ### 10.4 Mevcut ruh eşyaları (M0 — yenilenecek)
 
-Şu anki üç texture **16×16 piksel sanat** olarak yenilendi; aşağıdaki tarif korunuyor. Üçü de aynı boyutta, aynı dış hat kalınlığında ve aynı "yüzen parça" kompozisyonunda.
+Şu anki üç texture **16×16 piksel sanat** olarak yenilendi (vanilla item standardı). Ortak tema: **Düşmüş Muhafız Kalıntısı** — her eşya, muhafızın bedeninden kopmuş, içinde ruh çekirdeği taşıyan tek bir parça. Üçü de aynı dış hat kalınlığını, aynı sol üst ışığı ve aynı 1 px çekirdek parlamasını kullanır.
 
 | Eşya | Silüet | Gövde | Çekirdek | Detay |
 |---|---|---|---|---|
-| **Redstone Ruhu** | Eğik eşkenar dörtgen devre parçası | Siyah/ koyu bakır kart | Kırmızı kare çekirdek | İki bakır pin, ince devre izleri, küçük lehim noktaları |
-| **Builder Ruhu** | Bir köşesi kırık küp | Kuvars/kumtaşı blok | Amber prizma | Yüzeyde keski izi, küçük tuğla deseni, toz parçacığı |
-| **PvP Ruhu** | Çapraz hançer/kan damlası | Blackstone kabza, koyu çelik | Ruh mavisi damla | Kırmızı kan kenarı, küçük zincir halkası |
+| **Redstone Ruhu — Devre Kalbi** | Kalp; vanilla *heart of the sea* okunurluğunda | Bakır çerçeve (`#B87333`), koyu kırmızı iç | Kırmızı kalp çekirdeği + 1 px beyaz parlama | Kalp üstünde çentik, sol lobda açık ton, dış hatta bakır perçin hissi |
+| **Builder Ruhu — Mimar Tokmağı** | Dik tokmak; geniş kemik baş + kısa bakır sap | Kemik/kuvars baş (`#E8DFC8`), koyu bakır sap | Amber kare çekirdek (`#FF7A3C` + `#FFC46B`) + beyaz nokta | Başın sol üstünde 2 px ışık, sağ altta gölge, baş ile sap arasında gölge bandı |
+| **PvP Ruhu — Kırık Kılıç** | Çapraz kırık kılıç: bıçak üstte, balçak + sap altta | Koyu çelik bıçak, kemik balçak, bakır sap | Ruh camgöbeği damla (`#57E0E8`) balçak ortasında | Bıçakta kan oluğu (koyu kırmızı), kırık uçta çentik, sapta bakır ışık |
 
 - **Kompozisyon:** eşya 16×16'nın ortasına oturur; kenarlarda 1–2 px boşluk kalır.
 - **Parlama:** çekirdekte 2 px açık ton + 1 px beyaz nokta; fazlası "çiğ" durur.
+- **Ortak çekirdek mantığı:** Redstone kalbin tamamı, Builder tokmak başının ortası, PvP balçak ortası. Çekirdek her zaman eşyanın "ağırlık merkezinde" durur.
 - **Durum:** üçü de 16×16 olarak yeniden çizildi (M0).
 
 ### 10.5 Ritüel ve zanaat eşyaları (M2)
@@ -548,9 +564,9 @@ src/main/resources/assets/modirk/
 
 | Texture | Yol | Boyut | Milestone | Durum | Kısa tarif |
 |---|---|---|---|---|---|
-| Redstone Ruhu | `item/redstone_ruhu.png` | 16×16 | M0 | ✅ Yenilendi | Siyah devre parçası, kırmızı kare çekirdek |
-| Builder Ruhu | `item/builder_ruhu.png` | 16×16 | M0 | ✅ Yenilendi | Kırık kuvars küp, amber prizma |
-| PvP Ruhu | `item/pvp_ruhu.png` | 16×16 | M0 | ✅ Yenilendi | Kan damlası hançer, mavi çekirdek |
+| Redstone Ruhu | `item/redstone_ruhu.png` | 16×16 | M0 | ✅ Final | Bakır çerçeveli kalp, kırmızı çekirdek |
+| Builder Ruhu | `item/builder_ruhu.png` | 16×16 | M0 | ✅ Final | Kemik başlı tokmak, amber çekirdek |
+| PvP Ruhu | `item/pvp_ruhu.png` | 16×16 | M0 | ✅ Final | Kırık kılıç, camgöbeği balçak taşı |
 | Logo | `logo.png` | 128×128 | M0 | ✅ Final | Kullanıcı görseli |
 | Ruh Taşı (Redstone) | `item/ruh_tasi_redstone.png` | 16×16 | M2 | ⬜ Planlı | Kristal, kırmızı devre çatlağı |
 | Ruh Taşı (Builder) | `item/ruh_tasi_builder.png` | 16×16 | M2 | ⬜ Planlı | Kristal, amber geometrik çatlak |

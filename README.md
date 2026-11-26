@@ -43,7 +43,7 @@ Every boss is repeatable: new fortresses generate, so new Spirit Stones can be o
 | NeoForge 1.21.1 project, Gradle build | ✅ Working |
 | Three spirit items + creative tab | ✅ Working |
 | Tooltips, English and Turkish localization | ✅ Working |
-| Spirit item textures (16×16 pixel art) | ✅ Redrawn |
+| Spirit item textures (16×16 pixel art) | ✅ Final |
 | Mod logo | ✅ Added |
 | Races, rituals, bosses, fortresses | ❌ Not implemented |
 | 3D animated item models | ❌ Planned (GeckoLib) |
