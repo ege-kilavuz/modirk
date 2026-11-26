@@ -2,5 +2,9 @@
   "itemGroup.modirk": "Races",
   "item.modirk.redstone_ruhu": "Redstone Ruhu",
   "item.modirk.builder_ruhu": "Builder Ruhu",
-  "item.modirk.pvp_ruhu": "PvP Ruhu"
+  "item.modirk.pvp_ruhu": "PvP Ruhu",
+  "tooltip.modirk.redstone_ruhu": "Redstone Mühendisi'nin ruhunu taşır.",
+  "tooltip.modirk.builder_ruhu": "Builder'ın ruhunu taşır.",
+  "tooltip.modirk.pvp_ruhu": "PvP'cinin ruhunu taşır.",
+  "tooltip.modirk.race_spirit.hint": "Ritüel ile bu ruhla bağ kur."
 }

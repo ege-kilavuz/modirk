@@ -2,5 +2,9 @@
   "itemGroup.modirk": "Races",
   "item.modirk.redstone_ruhu": "Redstone Spirit",
   "item.modirk.builder_ruhu": "Builder Spirit",
-  "item.modirk.pvp_ruhu": "PvP Spirit"
+  "item.modirk.pvp_ruhu": "PvP Spirit",
+  "tooltip.modirk.redstone_ruhu": "Carries the spirit of the Redstone Engineer.",
+  "tooltip.modirk.builder_ruhu": "Carries the spirit of the Builder.",
+  "tooltip.modirk.pvp_ruhu": "Carries the spirit of the PvP Fighter.",
+  "tooltip.modirk.race_spirit.hint": "Bind to this spirit through a ritual."
 }

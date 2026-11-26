@@ -1,6 +1,7 @@
 package com.modirk.registry;
 
 import com.modirk.Modirk;
+import com.modirk.item.RaceSpiritItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -16,13 +17,16 @@ public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Modirk.MOD_ID);
 
     public static final DeferredItem<Item> REDSTONE_RUH =
-            ITEMS.registerSimpleItem("redstone_ruhu", new Item.Properties().stacksTo(1));
+            ITEMS.register("redstone_ruhu", () -> new RaceSpiritItem(
+                    new Item.Properties().stacksTo(1), "tooltip.modirk.redstone_ruhu"));
 
     public static final DeferredItem<Item> BUILDER_RUH =
-            ITEMS.registerSimpleItem("builder_ruhu", new Item.Properties().stacksTo(1));
+            ITEMS.register("builder_ruhu", () -> new RaceSpiritItem(
+                    new Item.Properties().stacksTo(1), "tooltip.modirk.builder_ruhu"));
 
     public static final DeferredItem<Item> PVP_RUH =
-            ITEMS.registerSimpleItem("pvp_ruhu", new Item.Properties().stacksTo(1));
+            ITEMS.register("pvp_ruhu", () -> new RaceSpiritItem(
+                    new Item.Properties().stacksTo(1), "tooltip.modirk.pvp_ruhu"));
 
     private ModItems() {
     }

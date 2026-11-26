@@ -38,6 +38,7 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 - Boss drop'u: **Ruh Taşı** + **özel kılıç** + tema malzemeleri.
 - **Ruh Taşı ayrıca** Nether'daki nadir sandıklarda çok düşük şansla bulunur (boss dışı alternatif yol).
 - Bossların giriş, saldırı ve ölüm animasyonları **GeckoLib** ile yapılır.
+- **Ruh eşyaları** ileride GeckoLib ile **3D animasyonlu item** olacak; modelleme sonraki aşamada yapılacak (şimdilik 2D item).
 
 ## 3. Bosslar
 
@@ -193,12 +194,12 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 
 ## 8. Yol Haritası
 
-- **M0:** NeoForge 1.21.1 iskeleti, temiz repo (README, LICENSE, .gitignore, build/ temizliği), çalışan build
+- **M0 (tamamlandı):** NeoForge 1.21.1 iskeleti, temiz repo (README, LICENSE, .gitignore, build/ temizliği), çalışan build
 - **M1:** Irk verisi, `/race` komutları, config, ölümde koruma
 - **M2:** Ruh Taşı, Sunak, ritüel multiblock, Ritüel Tableti (boss olmadan test)
 - **M3:** Nether kalesi varyantları, bosslar, loot, özel kılıçlar
 - **M4:** Ruh Cebi, Builder bonusu, Adrenalin + açlık bedeli, Ruh Sığı
-- **M5:** Animasyonlar, Ruh Kırıcı, advancement'lar, HUD/GUI
+- **M5:** Animasyonlar, Ruh Kırıcı, advancement'lar, HUD/GUI, ruh eşyalarının 3D GeckoLib modelleri
 - **M6:** Dil, README, denge, sürüm
 
 ## 9. Açık Sorular (yalnızca tuning)

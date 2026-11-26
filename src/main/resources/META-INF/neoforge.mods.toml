@@ -8,6 +8,7 @@ modId="modirk"
 version="0.1.0"
 displayName="Races"
 authors="ege-kilavuz"
+logoFile="logo.png"
 description='''
 Nether'in uçsuz bucaksız diyarlarında üç boss, Nether kalelerini ele geçirdi.
 Kaleleri keşfet, bossları yen, Ruh Taşı'nı al ve kendi ritüel alanında bir ırkla bağ kur.
