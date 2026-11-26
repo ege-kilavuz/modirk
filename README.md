@@ -118,7 +118,7 @@ src/main/resources/
 
 ## Contributing
 
-This is a personal project in early development. Issues and suggestions are welcome on the [issue tracker](https://github.com/ege-kilavuz/modirk/issues). Please keep in mind that the design is intentionally opinionated; see [`DESIGN.md`](DESIGN.md).
+This is a personal project in early development. Issues and suggestions are welcome on the [issue tracker](https://github.com/ege-kilavuz/modirk/issues). Please keep in mind that the design is intentionally opinionated; see [`DESIGN.md`](DESIGN.md). Art direction and the per-texture guide live in `DESIGN.md` §10.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Races (modirk) — Tasarım Dokümanı
 
-> Durum: **Tasarım kilitli v1.2 (hikaye + ritüel güncellendi)** · Son güncelleme: 2026-11-26
+> Durum: **Tasarım kilitli v1.3 (hikaye + ritüel + texture rehberi)** · Son güncelleme: 2026-11-26
 > Platform: NeoForge 1.21.1 · Java 21
 > Mod adı: **Races** · Mod id: **modirk** · Paket: `com.modirk`
 > Öncelik: tek oyunculu deneyim, public mod uyumlu
@@ -314,3 +314,276 @@ Nether'da 3 kale varyantı doğar; her varyantın kendi bossu, teması ve loot'u
 - [ ] Ruh Dövme Masası'nın mekaniği (custom recipe mi, Menu/Screen mi?)
 - [ ] Adak listelerinin sadeleştirilmesi (ırk malzemesi artık Lanetli Taş'ta)
 - [ ] Public mod için config ile gevşetme seçenekleri
+
+## 10. Sanat Yönü ve Texture Rehberi
+
+> Bu bölüm her texture'ın **ne anlatması** ve **nasıl görünmesi** gerektiğini tanımlar. İlk sürümdür; beğenmediğin maddeleri söyle, birlikte revize edelim.
+
+### 10.1 Genel kurallar
+
+- **Çözünürlük:** itemler ve bloklar **16×16**; GUI **256×256**; bosslar **128×128** (gerekirse 256×256 atlas).
+- **Stil:** vanilla'ya yakın, net piksel sanat. **Anti-aliasing yok, blur yok, gradient yok.**
+- **Dış hat:** her sprite'ta **1 px koyu hat** (`#14101A`).
+- **Işık:** sol üstten; gölge sağ altta. Tüm set aynı ışığı kullanır.
+- **Renk sayısı:** item başına **8–14 renk**; aynı rampanın 2–4 tonu.
+- **Arka plan:** şeffaf. Gölge sadece dış hat; yumuşak gölge yok.
+- **Silüet önce:** 16×16'da bile ne olduğu anlaşılmalı. Uzaktan bakınca kılıç kılıç, taş taş gibi okunmalı.
+- **Renk körlüğü:** ayrım sadece renkle değil, **şekille** de yapılır (eğri/düz/geniş bıçak, farklı çatlak deseni).
+- **Metin yok:** sadece rune, çentik, devre izi gibi soyut işaretler.
+- **Test:** her sprite oyun içinde vanilla itemlerle yan yana kontrol edilir; fazla parlak veya fazla detaylı olan sadeleştirilir.
+
+### 10.2 Ortak palet
+
+| Rol | Renk | Hex |
+|---|---|---|
+| Boşluk / dış hat | Void black | `#14101A` |
+| Derin gölge | Deep purple-black | `#241A2B` |
+| Nether tuğlası | Koyu kızıl kahve | `#3A1F1F` |
+| Nether tuğlası (açık) | Sıcak kahve | `#5A2E2A` |
+| Bazalt | Soğuk gri | `#3B3B44` |
+| Bazalt (açık) | Açık gri | `#5A5A66` |
+| Blackstone | Kömür siyahı | `#2A2A32` |
+| Kemik | Kirli beyaz | `#D8D0C0` |
+| Kül | Nötr gri | `#8A8178` |
+| Ruh mavisi | Soul blue | `#3FA7D6` |
+| Ruh parlaması | Soul glow | `#8FE8F5` |
+| Kor turuncusu | Ember | `#E17055` |
+| Kor parlaması | Ember glow | `#FFB86B` |
+| Altın | Gold | `#C9A227` |
+| Kan | Blood | `#8E2A2A` |
+| Kan (parlak) | Blood bright | `#C0392B` |
+| Redstone | Redstone red | `#D63031` |
+| Redstone parlaması | Redstone glow | `#FF5A4E` |
+| Bakır | Copper | `#B87333` |
+| Kuvars | Quartz | `#F0E6D2` |
+| Kumtaşı | Sandstone | `#D9B98A` |
+| Amber | Builder amber | `#E08A3C` |
+| Amber parlaması | Amber glow | `#FFC46B` |
+| Yozlaşma | Corrupted purple | `#5B2A6E` |
+
+### 10.3 Irk görsel dili
+
+| Irk | Ana renk | İkincil | Parlama | Motif | Şekil dili |
+|---|---|---|---|---|---|
+| **Redstone** | `#D63031` | Bakır `#B87333`, siyah `#14101A` | `#FF5A4E` | Devre izi, lehim noktası, lamba | Keskin, açılı, ince |
+| **Builder** | Amber `#E08A3C` | Kumtaşı `#D9B98A`, kuvars `#F0E6D2` | `#FFC46B` | Tuğla, keski, iskele, geometri | Bloklu, kalın, sağlam |
+| **PvP** | Kan `#8E2A2A` | Ruh mavisi `#3FA7D6`, blackstone `#2A2A32` | `#8FE8F5` | Bıçak, zincir, kan damlası | Sivri, düzensiz, agresif |
+
+**Ortak kural:** üç ırkın eşyaları aynı "kararmış metal + renkli çekirdek" ailesine ait görünür. Sadece renk değil, **çekirdek şekli** de değişir:
+
+- Redstone: kare/dikdörtgen çekirdek, devre çizgileri.
+- Builder: prizma/kesme taş çekirdek, geometrik çatlak.
+- PvP: damla/yıldız çekirdek, organik çatlak.
+
+### 10.4 Mevcut ruh eşyaları (M0 — yenilenecek)
+
+Şu anki üç texture **geçici ve bulanık**; hedef aşağıdaki gibidir. Üçü de aynı boyutta, aynı dış hat kalınlığında ve aynı "yüzen parça" kompozisyonunda olacak.
+
+| Eşya | Silüet | Gövde | Çekirdek | Detay |
+|---|---|---|---|---|
+| **Redstone Ruhu** | Eğik eşkenar dörtgen devre parçası | Siyah/ koyu bakır kart | Kırmızı kare çekirdek | İki bakır pin, ince devre izleri, küçük lehim noktaları |
+| **Builder Ruhu** | Bir köşesi kırık küp | Kuvars/kumtaşı blok | Amber prizma | Yüzeyde keski izi, küçük tuğla deseni, toz parçacığı |
+| **PvP Ruhu** | Çapraz hançer/kan damlası | Blackstone kabza, koyu çelik | Ruh mavisi damla | Kırmızı kan kenarı, küçük zincir halkası |
+
+- **Kompozisyon:** eşya 16×16'nın ortasına oturur; kenarlarda 1–2 px boşluk kalır.
+- **Parlama:** çekirdekte 2 px açık ton + 1 px beyaz nokta; fazlası "çiğ" durur.
+- **Yeniden çizim:** mevcut PNG'ler silinip bu tarifle 16×16 olarak yeniden üretilecek.
+
+### 10.5 Ritüel ve zanaat eşyaları (M2)
+
+#### Ruh Taşı (3 varyant)
+
+- **Boyut:** 16×16.
+- **Silüet:** 5–7 yüzlü, hafif eğik kristal; tek başına "değerli taş" gibi okunmalı.
+- **Gövde:** dumanlı siyah/derin mor (`#241A2B`), yüzeyde 2–3 çatlak.
+- **Çekirdek:** ırk renginde iç ışık; kristalin merkezinden dışarı doğru yayılan 3–4 çizgi.
+- **Varyantlar:**
+  - **Redstone:** kırmızı çekirdek, devre benzeri çatlaklar, bakır bir kıvrım.
+  - **Builder:** amber çekirdek, geometrik/prizmatik çatlaklar, kuvars tozu.
+  - **PvP:** ruh mavisi çekirdek, kırmızı damar, hafif kan sızıntısı.
+- **His:** boss'un kendi ruhu; karanlık, ağır, hafif "canlı" duran bir taş.
+
+#### Kılıç Parçası (tek tip)
+
+- **Boyut:** 16×16.
+- **Silüet:** kırık bıçak ucu; sapı sarılı, ucu kırılmış, tek başına işe yaramaz.
+- **Renk:** koyu çelik (`#3B3B44`), kemik/deri sap (`#D8D0C0`), hafif ruh mavisi kenar.
+- **Detay:** 2–3 çentik, bir tarafta testere izi; "3 tanesi birleşince kılıç olur" hissi.
+- **Not:** tek tip olduğu için ırk rengi **kullanılmaz**; nötr görünmeli.
+
+#### Lanetli Taş (3 varyant)
+
+- **Boyut:** 16×16.
+- **Silüet:** düzensiz, köşeli siyah taş; ortasında tek bir "göz" veya çığlık çatlağı.
+- **Gövde:** blackstone (`#2A2A32`) + derin gölge; yüzeyde ırk renginde parlayan çatlaklar.
+- **Varyantlar:**
+  - **Redstone:** kırmızı devre çatlakları, küçük kare göz.
+  - **Builder:** amber geometrik çatlaklar, prizma göz.
+  - **PvP:** mavi ruh çatlağı + kırmızı damar, damla göz.
+- **His:** yasak, kirli, "kullanılmaması gereken" bir taş. Fazla parlak olmayacak; parlama sadece çatlaklarda.
+
+#### Ritüel Tableti
+
+- **Boyut:** 16×16.
+- **Silüet:** üstü yuvarlak, altı düz taş tablet; bir köşesi kopmuş.
+- **Renk:** nether tuğlası/blackstone, kirli kemik kenar.
+- **Detay:** mavi rune satırları, küçük sunak+kaide diyagramı, çatlak.
+- **His:** yüzyıllardır kalelerde durmuş, okunmaya çalışılmış bir kayıt.
+
+#### Sunak (blok)
+
+- **Texture'lar:** `sunak_top`, `sunak_side`, `sunak_bottom` (16×16).
+- **Gövde:** nether tuğlası + blackstone; köşelerde kemik/rune kakma.
+- **Üst:** ortada sığ bir ruh çanağı; çanakta ırk renginde sıvı/ışık.
+- **Durumlar:**
+  - **Boş:** sönük çanak, nötr gri.
+  - **Aktif:** çanakta ırk rengi parlama, rune'lar yanar.
+  - **Tükenmiş:** çatlak gövde, sönmüş çanak, kül izi.
+- **Model:** `cube_bottom_top` + `facing`; aktif/tükenmiş için blockstate varyantı.
+
+#### Adak Kaidesi
+
+- **Texture'lar:** `adak_kaidesi_top`, `adak_kaidesi_side` (16×16).
+- **Silüet:** küçük, alçak sütun; üstte adak yuvası.
+- **Renk:** nether tuğlası gövde, blackstone üst, kemik rune.
+- **Detay:** yuvada hafif çukur gölge; adak konunca üstte küçük ırk rengi halka.
+
+#### Sütun
+
+- **Texture'lar:** `sutun_top`, `sutun_side` (16×16).
+- **Silüet:** 2–3 blok yüksekliğinde ritüel sütunu.
+- **Renk:** nether tuğlası/bazalt; dikey rune kabartmaları.
+- **Detay:** üstte ve altta kemik halka; gövdede tek renk rune.
+
+#### Ruh Dövme Masası (blok)
+
+- **Texture'lar:** `ruh_dovme_masasi_top`, `_side`, `_front` (16×16).
+- **Silüet:** örs + ocak karışımı; ağır, alçak, endüstriyel.
+- **Gövde:** blackstone/bazalt; köşelerde bakır perçin.
+- **Ön:** kırmızı-sıcak ocak ağzı (`#E17055` → `#FFB86B`), üstte 3 parça yuvası.
+- **Durumlar:** **sönük** (soğuk ocak) ve **aktif** (ocak yanıyor, parçalar parlıyor).
+- **Model:** `orientable` + `facing`; aktiflik blockstate ile.
+
+### 10.6 Boss kılıçları ve Ruh Kırıcı (M3/M5)
+
+| Silah | Silüet | Gövde | Sap/Balçak | Çekirdek | Karakter |
+|---|---|---|---|---|---|
+| **Kızıl Kılıç** | Geniş, eğri pala | Kararmış çelik, kan oluğu | Kemik sap, kırmızı taş topuz | Kan kırmızısı | Vahşi, kısa, ağır |
+| **Devre Kılıcı** | Düz, ince, sivri | Çelik + devre gravürü | Bakır balçak, siyah sap | Redstone kırmızısı | Hassas, teknik, soğuk |
+| **Mimarın Kılıcı** | Kalın, kısa, keski uçlu | Taş/kuvars kaplama | Kuvars balçak, deri sap | Amber | Ağır, inşaatçı, bloklu |
+| **Ruh Kırıcı** | Üç bıçağın kaynaşması, testere kenar | Üç renkli damar, çatlak çelik | Nether Star çekirdek, siyah sap | Üç renk aynı anda | Kaotik, endgame, ürkütücü |
+
+- **Ortak kural:** üç boss kılıcı aynı "kararmış çelik" tabanını kullanır; sadece silüet, balçak ve çekirdek rengi değişir.
+- **Ruh Kırıcı:** 16×16'da bile "üç kılıç birleşmiş" okunmalı; üç renk damarı birbirine dolaşır, Nether Star merkezde parlar.
+- **Animasyon notu:** GeckoLib 3D modelde kılıç ayrı bir kemik olacak; 2D texture sadece envanter/GUI ikonu.
+
+### 10.7 Bosslar (GeckoLib, M3/M5)
+
+| Boss | Silüet | Palet | Ana özellik | Emissive | Faz 2 |
+|---|---|---|---|---|---|
+| **Sinyal Efendisi** | Uzun, ince, havada süzülen | Siyah devre, bakır, redstone kırmızısı | Lamba kafası, tek büyük göz, kablo kolları | Kırmızı çekirdek + devre izleri | Gövde çatlar, çekirdek açığa çıkar, daha parlak |
+| **Mimar-ı Azam** | İri, geniş, ağır | Bazalt, kuvars, amber | Taş zırh, keski eller, omuzda iskele | Amber çekirdek + çatlaklar | Zırh kırılır, amber magma çatlakları |
+| **Kanlı Muhafız** | Zırhlı düellocu, atletik | Blackstone, kan kırmızısı, ruh mavisi | Testere pala, zincir, pelerin | Mavi gözler + kırmızı aura | Zırh parçalanır, kan aurasi, hızlanır |
+
+- **Teknik:** kafa, gövde, kollar, bacaklar, pelerin ve silah **ayrı kemikler**; animasyonda bağımsız hareket eder.
+- **Emissive:** parlayan kısımlar ayrı `_glow` texture katmanında; GeckoLib emissive renderer ile.
+- **Boyut:** minimum 128×128; ayrı parçalar çoksa 256×256 atlas.
+- **Ortak his:** hepsi "bir zamanlar muhafızdı" — zırh kalıntıları, yorgun ama tehditkâr duruş.
+- **Kale blokları:** kaleler vanilla paletiyle (nether brick, basalt, blackstone, crimson, quartz) inşa edilir; özel kale texture'ı üretilmez. Özel görünüm boss arenasındaki dekoratif bloklar ve partiküllerle sağlanır.
+
+### 10.8 Arayüz, HUD ve partiküller (M4)
+
+#### Ruh Cebi GUI
+
+- **Boyut:** 256×256.
+- **Panel:** koyu blackstone çerçeve, iç yüzey `#241A2B`; köşelerde ince redstone devre deseni.
+- **Slotlar:** 9×3, vanilla envanteriyle aynı boyut (18×18).
+- **Limit çubukları:** her slotun altında ince, ırk renginde dolum çubuğu.
+- **Sekmeler:** üstte küçük ikonlar (tümü / bloklar / redstone / arama).
+- **Bağlı eşya işareti:** envanterde eşyanın köşesinde küçük ruh bağı ikonu (kilit/rune) ve ince mor dış hat; eşyanın atılamadığını/konamadığını görsel olarak belli eder.
+- **His:** "ruhun içine açılan" karanlık bir panel; parlak GUI değil.
+
+#### HUD
+
+- **Yozlaşmış kalp:** koyu kalp silüeti, kırmızı çatlak, hafif mor gölge.
+- **Mühür:** küçük rune/çentik ikonu; 2 mühür = 1 kalp göstergesi.
+- **Adrenalin:** küçük kılıç/şimşek ikonu; can azaldıkça dolar.
+- **Ruh Sığı:** kalkan ikonu + cooldown çemberi.
+- **Ritüel:** dairesel rune halkası, 5 dk geri sayım, dalga sayacı, kanallama çubuğu.
+
+#### Partiküller
+
+- **Boyut:** 4×4 veya 8×8.
+- **Stil:** yumuşak parlama, sert kenar yok; additive blend.
+- **Türler:**
+  - `redstone_spark` — kırmızı kıvılcım.
+  - `builder_dust` — amber toz.
+  - `soul_flame` — mavi ruh alevi.
+  - `corruption` — siyah-mor çekirdek + ırk rengi kenar.
+- **Kullanım:** boss saldırıları, ritüel, bağlı blok kırılması, cep açılışı.
+
+### 10.9 Dosya adlandırma ve klasörler
+
+```text
+src/main/resources/assets/modirk/
+├── textures/
+│   ├── item/            ruh_tasi_redstone.png, kilic_parcasi.png, ...
+│   ├── block/           sunak_top.png, sunak_side.png, ...
+│   ├── entity/          sinyal_efendisi.png, mimar_i_azam.png, ...
+│   ├── gui/             ruh_cebi.png, icons/...
+│   └── particle/        redstone_spark.png, ...
+├── models/
+│   ├── item/            <esya>.json
+│   └── block/           <blok>.json
+├── blockstates/         <blok>.json
+└── lang/                en_us.json, tr_tr.json
+```
+
+- Dosya adları **registry id ile birebir** aynı olacak (`snake_case`).
+- 3D GeckoLib modelleri `geo/` ve `animations/` altında; texture'lar model başına ayrı dosya.
+- Emissive katmanlar `_glow` sonekiyle.
+- GUI ikonları `gui/icons/` altında; 16×16 veya 9×9.
+
+### 10.10 Üretim tablosu
+
+| Texture | Yol | Boyut | Milestone | Durum | Kısa tarif |
+|---|---|---|---|---|---|
+| Redstone Ruhu | `item/redstone_ruhu.png` | 16×16 | M0 | ♻️ Yenilenecek | Siyah devre parçası, kırmızı kare çekirdek |
+| Builder Ruhu | `item/builder_ruhu.png` | 16×16 | M0 | ♻️ Yenilenecek | Kırık kuvars küp, amber prizma |
+| PvP Ruhu | `item/pvp_ruhu.png` | 16×16 | M0 | ♻️ Yenilenecek | Kan damlası hançer, mavi çekirdek |
+| Logo | `logo.png` | 128×128 | M0 | ✅ Final | Kullanıcı görseli |
+| Ruh Taşı (Redstone) | `item/ruh_tasi_redstone.png` | 16×16 | M2 | ⬜ Planlı | Kristal, kırmızı devre çatlağı |
+| Ruh Taşı (Builder) | `item/ruh_tasi_builder.png` | 16×16 | M2 | ⬜ Planlı | Kristal, amber geometrik çatlak |
+| Ruh Taşı (PvP) | `item/ruh_tasi_pvp.png` | 16×16 | M2 | ⬜ Planlı | Kristal, mavi ruh + kırmızı damar |
+| Kılıç Parçası | `item/kilic_parcasi.png` | 16×16 | M2 | ⬜ Planlı | Kırık çelik uç, deri sap |
+| Lanetli Taş (Redstone) | `item/lanetli_tas_redstone.png` | 16×16 | M2 | ⬜ Planlı | Siyah taş, kırmızı devre çatlağı |
+| Lanetli Taş (Builder) | `item/lanetli_tas_builder.png` | 16×16 | M2 | ⬜ Planlı | Siyah taş, amber geometri |
+| Lanetli Taş (PvP) | `item/lanetli_tas_pvp.png` | 16×16 | M2 | ⬜ Planlı | Siyah taş, mavi çatlak + kırmızı damar |
+| Ritüel Tableti | `item/rituel_tableti.png` | 16×16 | M2 | ⬜ Planlı | Kırık taş tablet, mavi rune |
+| Sunak | `block/sunak_*.png` | 16×16 | M2 | ⬜ Planlı | Nether tuğlası + ruh çanağı |
+| Adak Kaidesi | `block/adak_kaidesi_*.png` | 16×16 | M2 | ⬜ Planlı | Küçük sütun, adak yuvası |
+| Sütun | `block/sutun_*.png` | 16×16 | M2 | ⬜ Planlı | Rune kabartmalı sütun |
+| Ruh Dövme Masası | `block/ruh_dovme_masasi_*.png` | 16×16 | M2 | ⬜ Planlı | Örs + ocak, 3 parça yuvası |
+| Kızıl Kılıç | `item/kizil_kilic.png` | 16×16 | M3 | ⬜ Planlı | Eğri pala, kan oluğu |
+| Devre Kılıcı | `item/devre_kilici.png` | 16×16 | M3 | ⬜ Planlı | Düz bıçak, devre gravürü |
+| Mimarın Kılıcı | `item/mimar_kilici.png` | 16×16 | M3 | ⬜ Planlı | Kalın keski bıçak, kuvars balçak |
+| Sinyal Efendisi | `entity/sinyal_efendisi.png` | 128+ | M3 | ⬜ Planlı | Devre gövde, lamba kafa |
+| Mimar-ı Azam | `entity/mimar_i_azam.png` | 128+ | M3 | ⬜ Planlı | Taş zırh, amber çekirdek |
+| Kanlı Muhafız | `entity/kanli_muhafiz.png` | 128+ | M3 | ⬜ Planlı | Blackstone zırh, kan pelerin |
+| Ruh Cebi GUI | `gui/ruh_cebi.png` | 256×256 | M4 | ⬜ Planlı | Koyu panel, redstone köşe |
+| HUD ikonları | `gui/icons/*.png` | 9–16 | M4 | ⬜ Planlı | Kalp, mühür, adrenalin, kalkan |
+| Partiküller | `particle/*.png` | 4–8 | M4 | ⬜ Planlı | Kıvılcım, toz, ruh alevi, yozlaşma |
+| Ruh Kırıcı | `item/ruh_kirici.png` | 16×16 | M5 | ⬜ Planlı | Üç bıçak, üç renk, Nether Star |
+| 3D item texture'ları | `item/3d/*.png` | 32–64 | M5 | ⬜ Planlı | GeckoLib model parçaları |
+
+### 10.11 Kalite kontrol listesi
+
+- [ ] 16×16, şeffaf arka plan, anti-aliasing yok.
+- [ ] 1 px koyu dış hat; sol üst ışık.
+- [ ] En fazla 14 renk; aynı rampanın tonları.
+- [ ] Silüet 16×16'da okunuyor; 2× büyütmede bozulmuyor.
+- [ ] Vanilla itemlerle yan yana koyunca fazla parlak/kontrastlı değil.
+- [ ] Üç ırk eşyası aynı setin parçası gibi duruyor.
+- [ ] Renk körlüğü testi: şekiller ayırt edilebiliyor.
+- [ ] Blok texture'ları dört yönde de sorunsuz dönüyor.
+- [ ] Emissive katmanlar karanlıkta parlak, gündüzde göz yormuyor.
