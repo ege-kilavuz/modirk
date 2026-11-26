@@ -1,0 +1,3 @@
+# Binaries and generated artifacts are not semantic graph material.
+src/main/resources/assets/modirk/textures/
+src/main/resources/logo.png
