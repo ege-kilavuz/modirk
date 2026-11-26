@@ -57,7 +57,7 @@ The server config is written to `config/modirk-server.toml` (per world).
 - Player-built ritual multiblock (altar, three **Spirit Pedestals**, four pillars), Nether-only.
 - **Spirit Pedestal** — displays a single item floating and slowly rotating above it; used for offerings and for showing off spirit relics.
 - Spirit Pocket UI, HUD, advancements, English and Turkish localization.
-- The three spirit items will later become **3D GeckoLib animated items**; modeling is planned for a later milestone.
+- The three spirit items are **placeholder art** and will be redesigned; later they become **3D GeckoLib animated items**.
 
 ## Current state
 
@@ -153,7 +153,7 @@ src/main/resources/
 
 ## Contributing
 
-This is a personal project in early development. Issues and suggestions are welcome on the [issue tracker](https://github.com/ege-kilavuz/modirk/issues). Please keep in mind that the design is intentionally opinionated; see [`DESIGN.md`](DESIGN.md). Art direction and the per-texture guide live in `DESIGN.md` §10.
+This is a personal project in early development. Issues and suggestions are welcome on the [issue tracker](https://github.com/ege-kilavuz/modirk/issues). Please keep in mind that the design is intentionally opinionated; see [`DESIGN.md`](DESIGN.md). The art direction brief lives in `DESIGN.md` §10 — it sets the tone and technical limits but leaves the actual forms to the artist.
 
 ## License
 

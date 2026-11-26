@@ -18,9 +18,9 @@ $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 Push-Location $root
 try {
-    function Test-Jdk21([string] $home) {
-        if ([string]::IsNullOrWhiteSpace($home)) { return $false }
-        $javac = Join-Path $home 'bin\javac.exe'
+    function Test-Jdk21([string] $jdkHome) {
+        if ([string]::IsNullOrWhiteSpace($jdkHome)) { return $false }
+        $javac = Join-Path $jdkHome 'bin\javac.exe'
         if (-not (Test-Path $javac)) { return $false }
         $version = & $javac -version 2>&1
         return ($version -match '^javac 21\.')
