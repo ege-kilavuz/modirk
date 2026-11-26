@@ -31,3 +31,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Syncthing klasor isaretleri
+.stfolder/
+
+# Kisisel inceleme ciktilari
+modir-minecraft-modu-incelemesi.json

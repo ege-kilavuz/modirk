@@ -1,6 +1,6 @@
 # Races (modirk) — Tasarım Dokümanı
 
-> Durum: **Tasarım v1.7 (oynanış detaylandırıldı, sanat yönü brief oldu)** · Son güncelleme: 2026-11-26
+> Durum: **Tasarım v1.8 (gizli varis + Ruh Kâhini hedefi + üç ilke)** · Son güncelleme: 2026-11-26
 > Platform: NeoForge 1.21.1 · Java 21
 > Mod adı: **Races** · Mod id: **modirk** · Paket: `com.modirk`
 > Öncelik: tek oyunculu deneyim, public mod uyumlu
@@ -29,9 +29,20 @@ Nether'ın kendisi bu ruhları yutar; bu yüzden ruhlar Overworld'de dağılır,
 
 Kaleleri mühürlediler ve Ruh Taşları'nı hazinelerinde tutuyorlar. Onları yenmek kaleyi susturmaz: **bir muhafızın ruhu kalesine bağlıdır.** Ruh Taşı, bu bağdan taşan kısımdır; beden yok olsa da kale, kalan ruh izinden muhafızı yeniden örer. Bu yüzden bosslar tekrar edilebilir — ve oyuncu, her tazelemede bir muhafızın ruhundan bir parça harcar.
 
+Kale sınırı aynı zamanda **yemin sınırıdır**: muhafızlar kalelerinin dışına adım atamaz. Bu yüzden oyuncu kaçtığında onu kovalamazlar; arena onların hapishanesi ve tahtıdır.
+
 ### 1.3 Ruh Kâhinleri
 
 Bir zamanlar **Ruh Kâhinleri** adlı bir tarikat vardı; **Ruh Bağı** ritüelini bilen tek topluluk. Muhafızlar tarikata saldırdı, çoğunu yok etti. Geriye kalelerde dağılmış **Ritüel Tabletleri** ve yarım kalmış notlar kaldı.
+
+Tarikatın **tek bir kan bağı** hayatta kaldı: oyuncu. Ama oyuncu bunu **bilmez**. Ne bir NPC söyler ne bir ekran yazar. Oyuncu yalnızca izleri takip eder:
+
+- Tabletler onun elinde **tam** okunur; başka okuyan için yarısı siliktir.
+- Sunağın yanında avucunda **ince bir rune izi** belirir (partikül).
+- Advancement isimleri ipucu verir ("Kan hatırlıyor", "Sen zaten biliyordun").
+- Gerçek, ancak **Ruh Kâhini** hedefinde açığa çıkar.
+
+Yüzeydeki motivasyon basittir: Nether'da hayatta kalmak ve güçlenmek. Derindeki sebep ise oyuncunun kendisinin bile bilmediği mirastır.
 
 Oyuncu bu tabletleri bulup ritüeli öğrenir. Ritüelin amacı muhafızı yok etmek değil; **onun alanını miras almak**.
 
@@ -78,6 +89,7 @@ Ruh Kırıcı hikayede bir **final seçimi değildir**; oyuncunun kendi bağın�
 - **Kale kalıntıları** — muhafızların düşüşünü anlatan kısa notlar/tabletler (M3).
 - **Advancement metinleri** — her boss ve her ırk için kısa hikaye cümleleri.
 - **Eşya lore'u** — Ruh Taşı ve kılıçların tooltip'leri.
+- **Gizli miras ipuçları** — tabletlerin yalnız oyuncuda tam okunması, avuç runesi, advancement isimleri; gerçek asla doğrudan söylenmez.
 
 ### 1.8 Oyuncu yolculuğu (hedef akış)
 
@@ -90,8 +102,22 @@ Ruh Kırıcı hikayede bir **final seçimi değildir**; oyuncunun kendi bağın�
 | Ritüel | 5 dakikalık Yozlaşma Evresi'ni tamamlar | Irk kazanılır |
 | Ustalık | Zayıflığıyla yaşar; cep, kalp, adrenalin yönetir | Irkın kimliği |
 | Sıfırlama | 3 kılıcı + Nether Star'ı birleştirir | Ruh Kırıcı ile yeniden seçim |
+| Miras | Üç ırkı da dener | Ruh Kâhini kimliği (oyuncuya geç açıklanır) |
 
 **Hedef süre:** ilk ırk ~2–4 saat; ikinci ırk daha hızlı (oyuncu artık ritüeli ve kaleleri biliyor).
+
+### 1.9 Üç ilke (neden üç muhafız?)
+
+Ruh Bağı üç ayağa dayanır; üç muhafız bunların bozulmuş hâlidir:
+
+| İlke | Muhafız | Bozulma |
+|---|---|---|
+| **Akıl** (bağlantı, düzen) | Sinyal Efendisi | Her şeyi devreye bağlamak; özgür iradeyi söndürmek |
+| **Biçim** (inşa, sınır) | Mimar-ı Azam | Her şeyi yapıya çevirmek; canlıyı moloza indirmek |
+| **İrade** (savaş, hayatta kalma) | Kanlı Muhafız | Doymak bilmez açlık; ölümü bile ziyafet görmek |
+
+Bir ırk bu üç ilkeden birini miras alır. **Ruh Kâhini** ise üçünü birden taşıyabilen kişidir — bu yüzden
+hedef, üç ırkı da tatmaktır.
 
 ## 2. Dünya: Nether Kaleleri
 
@@ -241,7 +267,7 @@ Her kale aynı iskeleti kullanır; tema odaları değişir:
 - Sadece hayatta kalma modunda ve oyuncu kırarken.
 - Fortune etkisi: yok; ekstra droplar sabit 3–4 adet.
 - Pasif: +1 blok reach, +%20 kırma hızı.
-- Zayıflık: PvP hasarı -%15.
+- Zayıflık: PvP hasarı -%15. Hikaye: Mimar savaşta bile **inşa etmeye** çalışır; eli blok arar, silahı gevşek tutar.
 
 ### 4.3 PvP'ci
 
@@ -312,6 +338,7 @@ Her kale aynı iskeleti kullanır; tema odaları değişir:
 | PvP | 1 Netherite Sword |
 
 - **Malzeme eşleşmesi:** Lanetli Taş'ın malzemesi, Ruh Taşı'nın ırkıyla eşleşmelidir (Redstone Ruh Taşı + Redstone Block gibi). Yanlış malzeme ritüeli başlatmaz; taş ve malzeme harcanmaz.
+- Lanetli Taş bir anahtar değil, **sahte bir yemin**tir: muhafızın ruhuna "seni geri getiriyorum" der. 5 dakika, yalanın inandırıcı kaldığı süredir.
 - Lanetli Taş sunağa konunca Ruh Taşı, malzemenin ruhuyla yozlaşır ve **5 dakikalık Yozlaşma Evresi** başlar.
 - Evre boyunca **zararlı moblara** ırka göre etki uygulanır:
 
@@ -363,6 +390,7 @@ Her kale aynı iskeleti kullanır; tema odaları değişir:
   - **Mimarın Kılıcı (Builder):** İsabette hedefin altındaki zemini kısa süreliğine kaldırır/bozar.
 - 3 bossun özel kılıcı birleştirilerek **Ruh Kırıcı** yapılır; ırk bağını koparır.
 - **Tarif:** 3 boss kılıcı + 1 **Nether Star**, smithing table'da birleşir.
+- **Neden Nether Star:** hiçbir kaleye bağlı olmayan **tek özgür ruh** odur; üç yemini birbirine bağlayan tarafsız çapadır.
 - Hikaye: üç kılıcın taşıdığı çelişen yeminlerden doğar; **final seçimi değil**, sıfırlama aracıdır.
 - Irkı sıfırlar; oyuncu yeni bir Ruh Taşı ile yeniden seçim yapabilir.
 - Kullanımda kırılmaz/tükenmez; tek seferlik değil, her sıfırlamada kullanılabilir (denge tuning'de netleşir).
@@ -553,6 +581,7 @@ assets/modirk/textures/
 - İlk boss → ilk Lanetli Taş → ilk ritüel → ilk ırk.
 - Irkla oynanış: cep/kalp yönetimi, adrenalin, builder ekonomisi.
 - İkinci/üçüncü kale → ikinci ırk veya Ruh Kırıcı için kılıçlar.
+- **Ruh Kâhini hedefi:** üç ırkı da tattıktan sonra açılan advancement; gerçek miras burada açığa çıkar.
 
 ### 11.3 İlerleme eksenleri
 
@@ -563,6 +592,7 @@ assets/modirk/textures/
 | Mühür | Redstone limitleri | Kalıcı kalp temizleme |
 | Kill sayacı | PvP oynanışı | Ruh Sığı kilidi |
 | Advancement | Keşif/başarı | Rehberlik |
+| Ruh Kâhini | Üç ırkı da tatmak | Kalıcı unvan + gerçek kimlik |
 
 ### 11.4 Denge ilkeleri
 
