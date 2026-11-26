@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+issueTrackerURL="https://github.com/ege-kilavuz/modirk/issues"
+
+[[mods]]
+modId="modirk"
+version="0.1.0"
+displayName="Races"
+authors="ege-kilavuz"
+description='''
+Nether'in uçsuz bucaksız diyarlarında üç boss, Nether kalelerini ele geçirdi.
+Kaleleri keşfet, bossları yen, Ruh Taşı'nı al ve kendi ritüel alanında bir ırkla bağ kur.
+
+Şu an geliştirme aşamasında: yalnızca eşyalar mevcut, oynanış özellikleri yakında eklenecek.
+'''
+
+[[dependencies.modirk]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.modirk]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.22)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.modirk]]
+modId="geckolib"
+type="required"
+versionRange="[4.7.0,)"
+ordering="AFTER"
+side="BOTH"
