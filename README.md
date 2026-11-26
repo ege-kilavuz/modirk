@@ -1,6 +1,6 @@
 # Races (modirk)
 
-> **Status: early development (M0 complete).** The project builds and loads, but only the three spirit items exist right now. Gameplay features are not implemented yet.
+> **Status: early development (M1 in progress).** The project builds and loads. Three spirit items and the race data layer (attachment, `/race` commands, config, keep-on-death) exist; gameplay mechanics are not implemented yet.
 
 Races is a [NeoForge](https://neoforged.net/) mod for **Minecraft 1.21.1**. Three fallen guardians have seized the castles of the Nether. Defeat them, claim their **Spirit Stones**, and perform a demanding ritual in the Nether to inherit one of their powers.
 
@@ -16,6 +16,28 @@ You do not simply craft a race. You earn it.
 6. Bind the guardian's power and become one of three races.
 
 Every boss is repeatable: new fortresses generate, so new Spirit Stones can be obtained.
+
+## Commands
+
+`/race` exists for administration and testing. Normal players receive a race only through the ritual.
+
+| Command | Permission | Description |
+|---|---|---|
+| `/race` | everyone | Show your own race |
+| `/race get <player>` | everyone | Show another player's race |
+| `/race set <player> <race>` | level 2 (configurable) | Assign `redstone`, `builder`, or `pvp` |
+| `/race clear <player>` | level 2 (configurable) | Remove the player's race |
+| `/race list` | everyone | List valid race ids |
+
+## Configuration
+
+The server config is written to `config/modirk-server.toml` (per world).
+
+| Key | Default | Description |
+|---|---|---|
+| `race.keepRaceOnDeath` | `true` | Keep the race after death. When `false`, dying resets the race and the ritual must be repeated. |
+| `race.announceRaceChange` | `true` | Announce race changes in chat. |
+| `commands.permissionLevel` | `2` | Permission level required for `/race set` and `/race clear`. |
 
 ## Planned races
 
@@ -45,7 +67,8 @@ Every boss is repeatable: new fortresses generate, so new Spirit Stones can be o
 | Tooltips, English and Turkish localization | ✅ Working |
 | Spirit item textures (16×16 pixel art) | ✅ Final |
 | Mod logo | ✅ Added |
-| Races, rituals, bosses, fortresses | ❌ Not implemented |
+| Race data (attachment), `/race` commands, config, keep-on-death | ✅ Working |
+| Races mechanics, rituals, bosses, fortresses | ❌ Not implemented |
 | 3D animated item models | ❌ Planned (GeckoLib) |
 
 ## Requirements
@@ -94,8 +117,11 @@ Run the client in a development environment:
 ```
 src/main/java/com/modirk/
 ├── Modirk.java              mod entry point
+├── command/RaceCommand.java /race command tree
+├── config/ModConfigs.java   server config (keep-on-death, permissions)
+├── race/                    Race enum, RaceData helpers, RaceEvents
 ├── item/RaceSpiritItem.java spirit item with tooltip
-└── registry/                items and creative tab
+└── registry/                items, creative tab, attachments
 
 src/main/resources/
 ├── META-INF/neoforge.mods.toml
@@ -110,7 +136,7 @@ src/main/resources/
 ## Roadmap
 
 - [x] **M0** — NeoForge 1.21.1 skeleton, clean repository, working build
-- [ ] **M1** — race data (attachment), `/race` commands, config, keep-on-death
+- [x] **M1** — race data (attachment), `/race` commands, config, keep-on-death
 - [ ] **M2** — Spirit Stone, altar, ritual multiblock, ritual tablet, Spirit Forge Table, Cursed Stone
 - [ ] **M3** — Nether fortress variants, bosses, sword pieces, loot, forged boss swords
 - [ ] **M4** — Spirit Pocket, Builder bonus, Adrenaline + hunger cost, Spirit Ward
@@ -131,7 +157,7 @@ MIT. See [`LICENSE`](LICENSE).
 
 **Races**, Minecraft 1.21.1 (NeoForge) için geliştirilen bir moddur. Nether kalelerini ele geçirmiş üç düşmüş muhafızı yenersin, düşen **Ruh Taşı** ve kılıç parçalarıyla Nether'da kendi kurduğun ritüel alanında bir ırkla bağ kurarsın. Ritüel için **Ruh Dövme Masası**'nda dövülen **Lanetli Taş** ve 5 dakikalık Yozlaşma Evresi gerekir.
 
-Şu an **M0 tamamlanmış** durumda: proje derleniyor, oyuna yükleniyor ve üç ruh eşyası görünüyor. Irk, ritüel, boss ve kale sistemleri henüz eklenmedi.
+Şu an **M1 tamamlanmış** durumda: proje derleniyor, oyuna yükleniyor, üç ruh eşyası görünüyor ve ırk verisi (`/race` komutları, config, ölümde koruma) çalışıyor. Irk mekanikleri, ritüel, boss ve kale sistemleri henüz eklenmedi.
 
 Ruh eşyaları ileride **GeckoLib ile 3D animasyonlu item** olacak; modelleme sonraki aşamada yapılacak.
 

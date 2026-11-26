@@ -6,5 +6,18 @@
   "tooltip.modirk.redstone_ruhu": "Redstone Mühendisi'nin ruhunu taşır.",
   "tooltip.modirk.builder_ruhu": "Builder'ın ruhunu taşır.",
   "tooltip.modirk.pvp_ruhu": "PvP'cinin ruhunu taşır.",
-  "tooltip.modirk.race_spirit.hint": "Ritüel ile bu ruhla bağ kur."
+  "tooltip.modirk.race_spirit.hint": "Ritüel ile bu ruhla bağ kur.",
+  "race.modirk.none": "Yok",
+  "race.modirk.redstone": "Redstone Mühendisi",
+  "race.modirk.builder": "Mimar",
+  "race.modirk.pvp": "PvP Savaşçısı",
+  "command.modirk.race.self": "Irkın: %s",
+  "command.modirk.race.other": "%s oyuncusunun ırkı: %s",
+  "command.modirk.race.set": "%s oyuncusunun ırkı %s olarak ayarlandı.",
+  "command.modirk.race.cleared": "%s oyuncusunun ırkı silindi.",
+  "command.modirk.race.none": "%s oyuncusunun ırkı yok.",
+  "command.modirk.race.already": "%s zaten %s.",
+  "command.modirk.race.unknown": "Bilinmeyen ırk: %s (geçerli: %s)",
+  "command.modirk.race.list": "Irklar: %s",
+  "command.modirk.race.announce": "%s artık %s."
 }

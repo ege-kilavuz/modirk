@@ -6,5 +6,18 @@
   "tooltip.modirk.redstone_ruhu": "Carries the spirit of the Redstone Engineer.",
   "tooltip.modirk.builder_ruhu": "Carries the spirit of the Builder.",
   "tooltip.modirk.pvp_ruhu": "Carries the spirit of the PvP Fighter.",
-  "tooltip.modirk.race_spirit.hint": "Bind to this spirit through a ritual."
+  "tooltip.modirk.race_spirit.hint": "Bind to this spirit through a ritual.",
+  "race.modirk.none": "None",
+  "race.modirk.redstone": "Redstone Engineer",
+  "race.modirk.builder": "Builder",
+  "race.modirk.pvp": "PvP Fighter",
+  "command.modirk.race.self": "Your race: %s",
+  "command.modirk.race.other": "%s's race: %s",
+  "command.modirk.race.set": "Set %s's race to %s.",
+  "command.modirk.race.cleared": "Cleared %s's race.",
+  "command.modirk.race.none": "%s has no race.",
+  "command.modirk.race.already": "%s is already %s.",
+  "command.modirk.race.unknown": "Unknown race: %s (valid: %s)",
+  "command.modirk.race.list": "Races: %s",
+  "command.modirk.race.announce": "%s has become %s."
 }
