@@ -596,6 +596,7 @@ assets/modirk/textures/
 
 ### 11.4 Denge ilkeleri
 
+- **Opsiyonel içerik:** mod bir modpack'te hiç kullanılmayabilir. Derinlik isteyen oyuncu için uzun döngü (3 ritüel, Ruh Kâhini, kale tekrarları) **bilinçli olarak** korunur; "herkes bitirsin" hedefi yoktur.
 - Irk güçlü ama **bedelli**: her ırkın bir kaynak tüketimi var.
 - Zayıflık oyuncuyu cezalandırmaz; **oyun tarzını şekillendirir**.
 - Bosslar ırkla kolaylaşır, ırksız da yenilebilir kalır.
